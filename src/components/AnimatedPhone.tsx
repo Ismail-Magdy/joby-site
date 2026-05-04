@@ -23,16 +23,16 @@ export function AnimatedPhone({
         reduceMotion
           ? undefined
           : {
-              y: [0, -14, 0],
+              y: [0, -18, 0],
             }
       }
       transition={
         reduceMotion
           ? undefined
           : {
-              duration: 4.5,
+              duration: 6.25,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: [0.45, 0.05, 0.55, 0.95],
               delay,
             }
       }

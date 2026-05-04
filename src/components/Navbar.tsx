@@ -1,24 +1,25 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
-import { TELEGRAM_URL } from '../config/site'
+import { WHATSAPP_BETA_URL } from '../config/site'
 import { Button } from './Button'
 
 const links = [
   { label: 'Features', href: '#features' },
   { label: 'Gamification', href: '#gamification' },
   { label: 'About Us', href: '#about' },
+  { label: 'Contact', href: '#contact' },
 ] as const
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/80 font-sans backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a
           href="#"
-          className="text-xl font-bold tracking-tight text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="font-heading text-xl font-normal tracking-wide text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           Joby
         </a>
@@ -34,7 +35,7 @@ export function Navbar() {
             </a>
           ))}
           <Button
-            href={TELEGRAM_URL}
+            href={WHATSAPP_BETA_URL}
             target="_blank"
             rel="noopener noreferrer"
             variant="primary"
@@ -46,7 +47,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2 md:hidden">
           <Button
-            href={TELEGRAM_URL}
+            href={WHATSAPP_BETA_URL}
             target="_blank"
             rel="noopener noreferrer"
             variant="primary"

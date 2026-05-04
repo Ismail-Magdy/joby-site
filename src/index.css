@@ -23,6 +23,7 @@
   display: flex;
   width: max-content;
   animation: marqueeScroll 55s linear infinite;
+  will-change: transform;
 }
 
 .hero-glow-pulse {

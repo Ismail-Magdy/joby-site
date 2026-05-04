@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
-import { WHATSAPP_BETA_URL } from '../config/site'
+import { LOGO_SVG, WHATSAPP_BETA_URL } from '../config/site'
 import { Button } from './Button'
 
 const links = [
@@ -19,9 +19,14 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a
           href="#"
-          className="font-heading text-xl font-normal tracking-wide text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="flex shrink-0 items-center py-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
-          Joby
+          <img
+            src={LOGO_SVG}
+            alt="Joby"
+            className="h-7 w-auto max-h-9 max-w-[min(180px,46vw)] object-contain object-left sm:h-8"
+            decoding="async"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">

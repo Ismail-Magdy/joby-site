@@ -28,10 +28,10 @@ export function ImageMarquee() {
       aria-label="App showcase"
     >
       <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+        <h2 className="font-heading text-2xl font-normal tracking-wide text-slate-900 sm:text-3xl">
           Inside the app
         </h2>
-        <p className="mx-auto mt-2 max-w-2xl text-slate-600">
+        <p className="mx-auto mt-2 max-w-2xl font-sans text-slate-600">
           A continuous scroll through real screens — from onboarding moments to
           everyday flows.
         </p>

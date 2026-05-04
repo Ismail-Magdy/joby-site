@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_TELEGRAM_URL?: string
+  readonly VITE_WHATSAPP_BETA_URL?: string
 }
 
 interface ImportMeta {

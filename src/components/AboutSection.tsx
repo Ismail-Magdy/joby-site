@@ -20,11 +20,11 @@ export function AboutSection() {
           </div>
           <h2
             id="about-heading"
-            className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+            className="font-heading text-3xl font-normal tracking-wide text-slate-900 sm:text-4xl"
           >
             About Joby
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
+          <p className="mt-4 font-sans text-lg leading-relaxed text-slate-600">
             Joby is built for job seekers in MENA who want clarity, momentum, and
             fair recognition for the effort they put in. We combine thoughtful UX
             with light-touch gamification so hiring feels less like a grind — and

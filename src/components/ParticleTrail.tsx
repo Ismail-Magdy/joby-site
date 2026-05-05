@@ -75,7 +75,20 @@ export function ParticleTrail() {
         particles.push(new Particle(mouseX, mouseY))
       }
     }
+
+    const onTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0]
+      if (touch) {
+        mouseX = touch.clientX
+        mouseY = touch.clientY
+        for (let i = 0; i < 2; i++) {
+          particles.push(new Particle(mouseX, mouseY))
+        }
+      }
+    }
+
     window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('touchmove', onTouchMove, { passive: true })
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -96,6 +109,7 @@ export function ParticleTrail() {
     return () => {
       window.removeEventListener('resize', resize)
       window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('touchmove', onTouchMove)
       cancelAnimationFrame(animationFrameId)
     }
   }, [])
@@ -103,7 +117,7 @@ export function ParticleTrail() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-[100] h-full w-full"
+      className="pointer-events-none fixed inset-0 z-40 h-full w-full"
       aria-hidden="true"
     />
   )

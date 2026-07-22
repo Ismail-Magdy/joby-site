@@ -12,7 +12,6 @@ export function MarqueeStrip({ items }: MarqueeStripProps) {
         <PhoneFrame
           key={`${dupKey}-${item.src}-${i}`}
           size="sm"
-          caption={decorative ? undefined : item.caption}
           glow
         >
           <img

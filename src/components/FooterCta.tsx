@@ -64,8 +64,8 @@ export function FooterCta() {
             Ready to Level Up Your Career?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
-            Join our early-access community today and be the first to experience
-            the future of hiring.
+            Join our early access community today and be the first to experience
+            the future of hiring
           </p>
           <div className="mt-10 flex justify-center">
             <Button
@@ -86,7 +86,7 @@ export function FooterCta() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
           <div className="text-center sm:text-left">
             <p className="text-sm text-slate-400">
-              © {new Date().getFullYear()} Joby. All rights reserved.
+              © {new Date().getFullYear()} Joby . All rights reserved
             </p>
             <p className="mt-1 text-sm text-slate-500">
               <a

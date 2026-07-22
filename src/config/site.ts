@@ -1,6 +1,6 @@
 const DEFAULT_WHATSAPP_BETA = 'https://wa.me/201507090603'
 
-/** Join Beta / primary CTA — WhatsApp chat. */
+/** Join Beta / primary CTA  WhatsApp chat. */
 export const WHATSAPP_BETA_URL =
   import.meta.env.VITE_WHATSAPP_BETA_URL?.trim() || DEFAULT_WHATSAPP_BETA
 

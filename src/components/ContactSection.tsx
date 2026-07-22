@@ -72,7 +72,7 @@ export function ContactSection() {
           </h2>
           <p className="mt-2 max-w-2xl font-sans text-slate-600">
             Reach the Joby team directly or follow our channels for updates and
-            early access.
+            early access
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">

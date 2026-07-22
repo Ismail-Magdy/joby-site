@@ -32,7 +32,7 @@ export function FeaturesSection() {
             Built for Ambitious Talent (Job Seekers)
           </h2>
           <p className="mt-3 font-sans text-lg text-slate-600">
-            Profiles, rewards, and a calm experience&nbsp;— even when the
+            Profiles, rewards, and a calm experience&nbsp; even when the
             network disagrees.
           </p>
         </motion.div>
@@ -55,7 +55,6 @@ export function FeaturesSection() {
                 key={screen.src}
                 src={screen.src}
                 alt={screen.alt}
-                caption={screen.caption}
               />
             ))}
           </FeatureCard>
@@ -73,7 +72,6 @@ export function FeaturesSection() {
                 key={screen.src}
                 src={screen.src}
                 alt={screen.alt}
-                caption={screen.caption}
               />
             ))}
           </FeatureCard>
@@ -89,7 +87,6 @@ export function FeaturesSection() {
                 key={screen.src}
                 src={screen.src}
                 alt={screen.alt}
-                caption={screen.caption}
               />
             ))}
           </FeatureCard>

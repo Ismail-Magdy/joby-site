@@ -65,7 +65,7 @@ export function ImageMarquee() {
           </h2>
           <p className="mx-auto mt-2 max-w-2xl font-sans text-slate-600">
             Explore shared flows, job seeker journeys, and the employer
-            view&nbsp;— each in its own live showcase.
+            view&nbsp; each in its own live showcase.
           </p>
         </motion.div>
 

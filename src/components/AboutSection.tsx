@@ -34,7 +34,7 @@ export function AboutSection() {
           <div className="flex flex-col text-center md:text-left">
             <h3 className="font-heading text-xl text-slate-900 mb-4">For Job Seekers</h3>
             <p className="font-sans text-lg leading-relaxed text-slate-600">
-              We provide the clarity and momentum you need to stand out. Through thoughtful UX and light-touch gamification, we ensure fair recognition for your efforts, making the hiring process less of a grind and more about progress you can see.
+              We provide the clarity and momentum you need to stand out. Through thoughtful UX and light touch gamification, we ensure fair recognition for your efforts, making the hiring process less of a grind and more about progress you can see.
             </p>
           </div>
           <div className="flex flex-col text-center md:text-left">

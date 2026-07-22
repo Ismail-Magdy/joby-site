@@ -72,7 +72,7 @@ export function PhoneFrame({
         <div
           className={`relative overflow-hidden bg-gradient-to-b from-[#2a2a2e] via-[#1a1a1e] to-[#0f0f12] ${s.bezel} shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.06)_inset,0_1px_0_rgba(255,255,255,0.08)_inset]`}
         >
-          {/* Inner screen bezel — ultra-thin gap */}
+          {/* Inner screen bezel  ultra-thin gap */}
           <div
             className="relative aspect-[9/19.5] w-full overflow-hidden bg-black"
             style={{ borderRadius: s.radius }}

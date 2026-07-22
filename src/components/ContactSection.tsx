@@ -31,21 +31,25 @@ const socialLinks = [
     label: 'Instagram',
     href: CONTACT.instagram,
     icon: InstagramIcon,
+    hoverColor: 'group-hover:text-[#E1306C] group-hover:border-[#E1306C]',
   },
   {
     label: 'Facebook',
     href: CONTACT.facebook,
     icon: FacebookIcon,
+    hoverColor: 'group-hover:text-[#1877F2] group-hover:border-[#1877F2]',
   },
   {
     label: 'LinkedIn',
     href: CONTACT.linkedin,
     icon: LinkedinIcon,
+    hoverColor: 'group-hover:text-[#0A66C2] group-hover:border-[#0A66C2]',
   },
   {
     label: 'TikTok',
     href: CONTACT.tiktok,
     icon: TiktokIcon,
+    hoverColor: 'group-hover:text-black group-hover:border-black',
   },
 ] as const
 
@@ -53,94 +57,112 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="scroll-mt-24 border-t border-slate-200 bg-white py-16 sm:py-20"
+      className="scroll-mt-24 border-t border-slate-200 bg-white py-16 sm:py-24"
       aria-labelledby="contact-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-10%' }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="rounded-3xl border border-slate-200/90 bg-slate-50/80 p-8 shadow-sm sm:p-10"
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="relative overflow-hidden rounded-[2.5rem] border border-slate-200/60 bg-gradient-to-br from-white via-white to-slate-50/80 p-8 shadow-[0_8px_32px_-8px_rgba(15,23,42,0.06)] sm:p-14"
         >
-          <h2
-            id="contact-heading"
-            className="font-heading text-3xl font-normal tracking-wide text-slate-900 sm:text-4xl"
-          >
-            Contact
-          </h2>
-          <p className="mt-2 max-w-2xl font-sans text-slate-600">
-            Reach the Joby team directly or follow our channels for updates and
-            early access
-          </p>
+          {/* Subtle glowing background orbs */}
+          <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-[80px]" />
+          <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-violet-400/10 blur-[80px]" />
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <motion.a
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              href={CONTACT.phoneTel}
-              className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 font-sans text-slate-800 shadow-sm transition-colors hover:border-primary/40 hover:bg-primary/[0.04]"
-            >
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <Phone className="size-5" aria-hidden />
+          <div className="relative z-10 grid gap-12 lg:grid-cols-2 lg:gap-8">
+            {/* Left side: Heading */}
+            <div>
+              <span className="inline-block rounded-full bg-primary/8 px-3.5 py-1 font-sans text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                Reach Out
               </span>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                  Phone
-                </p>
-                <p className="text-lg font-semibold text-slate-900">
-                  {CONTACT.phoneDisplay}
-                </p>
-              </div>
-            </motion.a>
-            <motion.a
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              href={CONTACT.emailMailto}
-              className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 font-sans text-slate-800 shadow-sm transition-colors hover:border-primary/40 hover:bg-primary/[0.04]"
-            >
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <Mail className="size-5" aria-hidden />
-              </span>
-              <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                  Email
-                </p>
-                <p className="truncate text-base font-semibold text-slate-900 sm:text-lg">
-                  {CONTACT.email}
-                </p>
-              </div>
-            </motion.a>
-          </div>
+              <h2
+                id="contact-heading"
+                className="mt-4 font-heading text-4xl font-normal tracking-wide text-slate-900 sm:text-5xl"
+              >
+                Let's connect.
+              </h2>
+              <p className="mt-4 max-w-md font-sans text-lg text-slate-600">
+                Have questions or need support? Reach the Joby team directly or
+                follow our channels for the latest updates and early access.
+              </p>
 
-          <div className="mt-8 border-t border-slate-200/90 pt-8">
-            <p className="font-heading text-sm font-normal uppercase tracking-[0.2em] text-slate-500">
-              Social
-            </p>
-            <nav
-              className="mt-4 flex flex-wrap gap-3"
-              aria-label="Social media"
-            >
-              {socialLinks.map(({ label, href, icon: Icon }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="flex size-12 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-sm transition-colors hover:border-primary/50 hover:text-primary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
+              {/* Social icons moved to left column on desktop */}
+              <div className="mt-10 lg:mt-12">
+                <p className="font-heading text-xs font-normal uppercase tracking-[0.2em] text-slate-400">
+                  Follow Us
+                </p>
+                <nav
+                  className="mt-4 flex flex-wrap gap-4"
+                  aria-label="Social media"
                 >
-                  <Icon className="size-5" aria-hidden />
-                </motion.a>
-              ))}
-            </nav>
+                  {socialLinks.map(({ label, href, icon: Icon, hoverColor }) => (
+                    <motion.a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className={`group flex size-12 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-500 shadow-sm transition-colors duration-300 ${hoverColor}`}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                    >
+                      <Icon className="size-5 transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                    </motion.a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+
+            {/* Right side: Contact Cards */}
+            <div className="flex flex-col gap-4">
+              <motion.a
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                href={CONTACT.phoneTel}
+                className="group relative flex items-center gap-5 overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-md sm:p-7"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.03] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative flex size-14 shrink-0 items-center justify-center rounded-2xl bg-slate-50 text-slate-600 transition-colors duration-300 group-hover:bg-primary/10 group-hover:text-primary">
+                  <Phone className="size-6 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} aria-hidden />
+                </div>
+                <div className="relative">
+                  <p className="font-sans text-xs font-semibold uppercase tracking-wider text-slate-400 transition-colors group-hover:text-primary/70">
+                    Phone
+                  </p>
+                  <p className="mt-1 font-sans text-lg font-medium text-slate-900 sm:text-xl">
+                    {CONTACT.phoneDisplay}
+                  </p>
+                </div>
+              </motion.a>
+
+              <motion.a
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                href={CONTACT.emailMailto}
+                className="group relative flex items-center gap-5 overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-md sm:p-7"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.03] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative flex size-14 shrink-0 items-center justify-center rounded-2xl bg-slate-50 text-slate-600 transition-colors duration-300 group-hover:bg-primary/10 group-hover:text-primary">
+                  <Mail className="size-6 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} aria-hidden />
+                </div>
+                <div className="relative min-w-0">
+                  <p className="font-sans text-xs font-semibold uppercase tracking-wider text-slate-400 transition-colors group-hover:text-primary/70">
+                    Email
+                  </p>
+                  <p className="mt-1 truncate font-sans text-base font-medium text-slate-900 sm:text-lg">
+                    {CONTACT.email}
+                  </p>
+                </div>
+              </motion.a>
+            </div>
           </div>
         </motion.div>
       </div>

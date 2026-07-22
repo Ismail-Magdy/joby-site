@@ -73,14 +73,14 @@ export function Hero() {
             />
           )}
 
-          <div className="relative z-10 w-[46%] max-w-[220px] sm:w-[42%]">
+          <div className="relative z-10 w-[45%] max-w-[220px]">
             <AnimatedPhone
               src={HERO_SCREENS.left.src}
               alt={HERO_SCREENS.left.alt}
               delay={0}
             />
           </div>
-          <div className="relative z-10 w-[46%] max-w-[220px] -translate-y-6 sm:w-[42%] sm:-translate-y-8">
+          <div className="relative z-10 w-[45%] max-w-[220px] translate-y-6 sm:translate-y-10">
             <AnimatedPhone
               src={HERO_SCREENS.right.src}
               alt={HERO_SCREENS.right.alt}

@@ -5,6 +5,7 @@ import { FeaturesSection } from './FeaturesSection'
 import { FooterCta } from './FooterCta'
 import { Hero } from './Hero'
 import { ImageMarquee } from './ImageMarquee'
+import { MobileBottomNav } from './MobileBottomNav'
 import { Navbar } from './Navbar'
 import { ParticleTrail } from './ParticleTrail'
 
@@ -13,6 +14,7 @@ export function LandingPage() {
     <div className="min-h-screen bg-white font-sans text-slate-900 antialiased">
       <ParticleTrail />
       <Navbar />
+      <MobileBottomNav />
       <main>
         <Hero />
         <FeaturesSection />

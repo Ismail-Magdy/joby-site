@@ -25,26 +25,27 @@ export function FeatureCard({
     <motion.article
       id={id}
       variants={variants}
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: 'spring', stiffness: 420, damping: 24 }}
-      className="scroll-mt-24 rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm will-change-transform sm:p-10"
+      className="group/card scroll-mt-24 overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-white via-white to-slate-50/80 p-8 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.08)] transition-shadow duration-500 hover:shadow-[0_12px_48px_-8px_rgba(37,99,235,0.12)] will-change-transform sm:p-10"
     >
-      <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
+      <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+        {/* Text content */}
         <div className={reverse ? 'lg:order-2' : ''}>
           {eyebrow ? (
-            <p className="font-heading text-sm font-normal uppercase tracking-[0.18em] text-primary">
+            <span className="inline-block rounded-full bg-primary/8 px-3.5 py-1 font-sans text-xs font-bold uppercase tracking-[0.18em] text-primary">
               {eyebrow}
-            </p>
+            </span>
           ) : null}
-          <h2 className="font-heading mt-2 text-3xl font-normal tracking-wide text-slate-900 sm:text-4xl">
+          <h2 className="mt-3 font-heading text-3xl font-normal tracking-wide text-slate-900 sm:text-4xl">
             {title}
           </h2>
           <p className="mt-4 font-sans text-lg leading-relaxed text-slate-600">
             {description}
           </p>
         </div>
+
+        {/* Phone mockups */}
         <div
-          className={`flex flex-wrap items-center justify-center gap-4 sm:gap-6 ${
+          className={`flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 ${
             reverse ? 'lg:order-1' : ''
           }`}
         >

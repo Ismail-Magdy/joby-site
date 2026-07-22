@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { JOB_SEEKER_FEATURE_IMAGES } from '../config/site'
+import { JOB_SEEKER_FEATURES } from '../data/mockups'
 import { FeatureCard } from './FeatureCard'
 import { featureCardItemVariants } from './featureMotion'
 import {
@@ -9,6 +9,8 @@ import {
 import { TiltScreenshot } from './TiltScreenshot'
 
 export function FeaturesSection() {
+  const { profiles, gamification, seamless } = JOB_SEEKER_FEATURES
+
   return (
     <section
       id="features"
@@ -30,8 +32,8 @@ export function FeaturesSection() {
             Built for Ambitious Talent (Job Seekers)
           </h2>
           <p className="mt-3 font-sans text-lg text-slate-600">
-            Profiles, rewards, and a calm experience , even when the network
-            disagrees.
+            Profiles, rewards, and a calm experience&nbsp;— even when the
+            network disagrees.
           </p>
         </motion.div>
 
@@ -44,52 +46,52 @@ export function FeaturesSection() {
         >
           <FeatureCard
             variants={featureCardItemVariants}
-            title="Smart Profiles"
-            eyebrow="Feature"
-            description="Add your location, upload your CV, and connect social links so employers see the full picture , fast, structured, and ready to share."
+            title={profiles.title}
+            eyebrow={profiles.eyebrow}
+            description={profiles.description}
           >
-            <TiltScreenshot
-              src={JOB_SEEKER_FEATURE_IMAGES.profiles[0]}
-              alt="Joby profile screen"
-            />
-            <TiltScreenshot
-              src={JOB_SEEKER_FEATURE_IMAGES.profiles[1]}
-              alt="Joby location screen"
-            />
+            {profiles.screens.map((screen) => (
+              <TiltScreenshot
+                key={screen.src}
+                src={screen.src}
+                alt={screen.alt}
+                caption={screen.caption}
+              />
+            ))}
           </FeatureCard>
 
           <FeatureCard
             id="gamification"
             variants={featureCardItemVariants}
-            title="Gamified Experience"
-            eyebrow="Core USP"
+            title={gamification.title}
+            eyebrow={gamification.eyebrow}
             reverse
-            description="Daily check-ins and point rewards keep momentum high. Small wins (+10 points and more) turn your job hunt into a streak you actually want to maintain."
+            description={gamification.description}
           >
-            <TiltScreenshot
-              src={JOB_SEEKER_FEATURE_IMAGES.gamification[0]}
-              alt="Joby points and rewards"
-            />
-            <TiltScreenshot
-              src={JOB_SEEKER_FEATURE_IMAGES.gamification[1]}
-              alt="Joby achievement and alerts"
-            />
+            {gamification.screens.map((screen) => (
+              <TiltScreenshot
+                key={screen.src}
+                src={screen.src}
+                alt={screen.alt}
+                caption={screen.caption}
+              />
+            ))}
           </FeatureCard>
 
           <FeatureCard
             variants={featureCardItemVariants}
-            title="Seamless UX & Offline Mode"
-            eyebrow="Reliability"
-            description="A clean interface with thoughtful error handling , including a friendly offline state , so the app stays approachable even when connectivity drops."
+            title={seamless.title}
+            eyebrow={seamless.eyebrow}
+            description={seamless.description}
           >
-            <TiltScreenshot
-              src={JOB_SEEKER_FEATURE_IMAGES.seamless[0]}
-              alt="Joby settings screen"
-            />
-            <TiltScreenshot
-              src="/assets/common/off_line.jpeg"
-              alt="Joby offline mode"
-            />
+            {seamless.screens.map((screen) => (
+              <TiltScreenshot
+                key={screen.src}
+                src={screen.src}
+                alt={screen.alt}
+                caption={screen.caption}
+              />
+            ))}
           </FeatureCard>
         </motion.div>
       </div>

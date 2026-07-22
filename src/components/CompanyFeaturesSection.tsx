@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion'
+import { COMPANY_FEATURES } from '../data/mockups'
 import { FeatureCard } from './FeatureCard'
 import { featureCardItemVariants } from './featureMotion'
 import {
   featureHeadingVariants,
   featureListVariants,
 } from './featureSectionMotion'
-import { PlaceholderPhoneMockup } from './PlaceholderPhoneMockup'
+import { TiltScreenshot } from './TiltScreenshot'
 
 export function CompanyFeaturesSection() {
+  const { profiles, pipeline, clarity } = COMPANY_FEATURES
+
   return (
     <section
       id="company-features"
@@ -43,33 +46,51 @@ export function CompanyFeaturesSection() {
         >
           <FeatureCard
             variants={featureCardItemVariants}
-            title="Rich Candidate Profiles"
-            eyebrow="Talent"
-            description="Browse structured profiles with CVs, locations, and social context so you can shortlist faster and interview with confidence."
+            title={profiles.title}
+            eyebrow={profiles.eyebrow}
+            description={profiles.description}
           >
-            <PlaceholderPhoneMockup label="Company candidate profile preview placeholder" />
-            <PlaceholderPhoneMockup label="Company candidate insights preview placeholder" />
+            {profiles.screens.map((screen) => (
+              <TiltScreenshot
+                key={screen.src}
+                src={screen.src}
+                alt={screen.alt}
+                caption={screen.caption}
+              />
+            ))}
           </FeatureCard>
 
           <FeatureCard
             variants={featureCardItemVariants}
-            title="Pipeline & Engagement"
-            eyebrow="Hiring"
+            title={pipeline.title}
+            eyebrow={pipeline.eyebrow}
             reverse
-            description="Track applicants through stages, see engagement signals, and keep momentum on roles that matter , without losing context in spreadsheets."
+            description={pipeline.description}
           >
-            <PlaceholderPhoneMockup label="Company pipeline preview placeholder" />
-            <PlaceholderPhoneMockup label="Company engagement metrics preview placeholder" />
+            {pipeline.screens.map((screen) => (
+              <TiltScreenshot
+                key={screen.src}
+                src={screen.src}
+                alt={screen.alt}
+                caption={screen.caption}
+              />
+            ))}
           </FeatureCard>
 
           <FeatureCard
             variants={featureCardItemVariants}
-            title="Operational Clarity"
-            eyebrow="Control"
-            description="A calm dashboard for roles, settings, and day-to-day hiring tasks , designed to stay usable when volume spikes or teams collaborate."
+            title={clarity.title}
+            eyebrow={clarity.eyebrow}
+            description={clarity.description}
           >
-            <PlaceholderPhoneMockup label="Company dashboard preview placeholder" />
-            <PlaceholderPhoneMockup label="Company settings preview placeholder" />
+            {clarity.screens.map((screen) => (
+              <TiltScreenshot
+                key={screen.src}
+                src={screen.src}
+                alt={screen.alt}
+                caption={screen.caption}
+              />
+            ))}
           </FeatureCard>
         </motion.div>
       </div>

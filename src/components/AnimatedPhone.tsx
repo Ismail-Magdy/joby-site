@@ -1,8 +1,10 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { PhoneFrame } from './PhoneFrame'
 
 type AnimatedPhoneProps = {
   src: string
   alt: string
+  caption?: string
   /** Motion delay in seconds for staggered depth */
   delay?: number
   className?: string
@@ -11,6 +13,7 @@ type AnimatedPhoneProps = {
 export function AnimatedPhone({
   src,
   alt,
+  caption,
   delay = 0,
   className = '',
 }: AnimatedPhoneProps) {
@@ -37,7 +40,7 @@ export function AnimatedPhone({
             }
       }
     >
-      <div className="aspect-[9/19.5] overflow-hidden rounded-[2.35rem] border-[10px] border-slate-900 bg-slate-900 shadow-[var(--shadow-phone)]">
+      <PhoneFrame size="lg" caption={caption} glow>
         <img
           src={src}
           alt={alt}
@@ -45,11 +48,7 @@ export function AnimatedPhone({
           loading="eager"
           decoding="async"
         />
-      </div>
-      <div
-        className="pointer-events-none absolute left-1/2 top-3 h-5 w-[28%] -translate-x-1/2 rounded-full bg-slate-950/85"
-        aria-hidden
-      />
+      </PhoneFrame>
     </motion.div>
   )
 }

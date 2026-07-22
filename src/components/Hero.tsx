@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
-import { HERO_MOCKUP_IMAGES, WHATSAPP_BETA_URL } from '../config/site'
+import { WHATSAPP_BETA_URL } from '../config/site'
+import { HERO_SCREENS } from '../data/mockups'
 import { AnimatedPhone } from './AnimatedPhone'
 import { Button } from './Button'
 
@@ -74,15 +75,15 @@ export function Hero() {
 
           <div className="relative z-10 w-[46%] max-w-[220px] sm:w-[42%]">
             <AnimatedPhone
-              src={HERO_MOCKUP_IMAGES.left}
-              alt="Joby onboarding screen"
+              src={HERO_SCREENS.left.src}
+              alt={HERO_SCREENS.left.alt}
               delay={0}
             />
           </div>
           <div className="relative z-10 w-[46%] max-w-[220px] -translate-y-6 sm:w-[42%] sm:-translate-y-8">
             <AnimatedPhone
-              src={HERO_MOCKUP_IMAGES.right}
-              alt="Joby splash screen"
+              src={HERO_SCREENS.right.src}
+              alt={HERO_SCREENS.right.alt}
               delay={0.55}
             />
           </div>

@@ -10,6 +10,8 @@
   --shadow-phone: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
+/* ── Infinite Marquee ─────────────────────────────────────── */
+
 @keyframes marqueeScroll {
   from {
     transform: translateX(0);
@@ -22,13 +24,18 @@
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marqueeScroll 55s linear infinite;
+  animation: marqueeScroll 60s linear infinite;
+  animation-play-state: var(--marquee-play-state, running);
   will-change: transform;
 }
+
+/* ── Hero Glow ────────────────────────────────────────────── */
 
 .hero-glow-pulse {
   animation: heroGlowPulse 5.5s ease-in-out infinite;
 }
+
+/* ── Reduced Motion ───────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
@@ -39,6 +46,8 @@
     animation: none !important;
   }
 }
+
+/* ── Base ─────────────────────────────────────────────────── */
 
 html {
   scroll-behavior: smooth;
